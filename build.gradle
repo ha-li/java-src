@@ -1,2 +1,18 @@
-apply plugin: 'java'
+apply plugin: 'idea'
 
+subprojects {
+   apply plugin: 'java'
+   apply from: "$rootDir/gradle/jacoco.gradle"
+
+   repositories {
+      mavenCentral ()
+   }
+   
+   dependencies {
+      testCompile 'junit:junit:4.12'
+   }
+}
+
+task wrapper (type: Wrapper) {
+   gradleVersion = '3.2'
+}
