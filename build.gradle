@@ -1,4 +1,14 @@
-apply plugin: 'idea'
+allprojects {
+   apply plugin: 'idea'
+
+   ext {
+      projectIds = [
+              group  : 'com.gecko',
+              name   : "$project.name",
+              version: '0.1'
+      ]
+   }
+}
 
 subprojects {
    apply plugin: 'java'
