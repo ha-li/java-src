@@ -3,6 +3,7 @@ include 'string-utils'
 rootProject.children.each {
    project ->
       String fileBaseName = project.name.replaceAll ("\\p{Upper}") { "-${it.toLowerCase()}" }
+      //String fileBaseName = project.name.toLowerCase()
       project.projectDir = new File (settingsDir, fileBaseName)
       project.buildFileName = "${fileBaseName}.gradle"
       assert project.projectDir.isDirectory ()
