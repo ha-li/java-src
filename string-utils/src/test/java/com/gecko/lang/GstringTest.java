@@ -36,6 +36,10 @@ public class GstringTest {
    public void test_copy_instantiation () throws NoSuchFieldException, IllegalAccessException {
       char[] a = {'a', 'b', 'c'};
       Gstring g1 = new Gstring(a);
+
+      // Gstring copy constructor does a copy over of the underlying
+      // character sequence. So g2's value should be a different
+      // instance from g1's value.
       Gstring g2 = new Gstring(g1);
 
       Field f = Gstring.class.getDeclaredField ("value");
